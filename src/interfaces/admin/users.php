@@ -2,6 +2,7 @@
 session_start();
 include('../../data/conn.php');
 $title = 'Edit Users';
+$active_page = 'Users';
 include('../shared/head.php');
 include('../shared/sidebar.php');
 

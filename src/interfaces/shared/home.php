@@ -1,6 +1,7 @@
 <?php
 session_start();
 $title = 'Home';
+$active_page = 'Home';
 include('head.php');
 include('sidebar.php');
 ?>

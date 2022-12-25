@@ -40,7 +40,7 @@ if (isset($_POST['btn_login'])) {
 				$_SESSION['user'] = $row['name_user'];
 				$_SESSION['role'] = $row['role'];
 				//ir para a pagina inicial
-				echo '<script> window.location.href="interfaces/shared/home.php"</script>';
+				echo '<script> window.location.href="/interfaces/shared/home.php"</script>';
 				//header("Location: interfaces/shared/home.php");
 				//exit;
 			} else {
