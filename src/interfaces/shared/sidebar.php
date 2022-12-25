@@ -9,7 +9,7 @@
 		<hr>
 		<ul class="nav nav-pills flex-column mb-auto">
 			<li class="nav-item">
-				<a href="/interfaces/shared/home.php" <?php echo $active_page == 'Home' ? ' class="active nav-link"' : ''; ?> class="nav-link" aria-current="page">
+				<a href="/interfaces/shared/home.php" <?php echo $active_page == 'Home' ? ' class="active nav-link"' : ''; ?> class="nav-link link-dark">
 					Home
 				</a>
 			</li>
@@ -17,6 +17,11 @@
 				<li>
 					<a href="/interfaces/admin/users.php" <?php echo $active_page == 'Users' ? ' class="active nav-link"' : ''; ?> class="nav-link link-dark">
 						Users
+					</a>
+				</li>
+				<li>
+					<a href="/interfaces/admin/feedback.php" <?php echo $active_page == 'Feedback' ? ' class="active nav-link"' : ''; ?> class="nav-link link-dark">
+						Feedback
 					</a>
 				</li>
 			<?php endif; ?>
@@ -38,5 +43,7 @@
 			<?php endif; ?>
 		</ul>
 		<hr>
-		<button class="btn btn-danger">Logout</button>
+		<form action="/interfaces/shared/logout.php">
+			<button type="submit" class="btn btn-danger">Logout</button>
+		</form>
 	</div>

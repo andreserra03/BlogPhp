@@ -7,7 +7,10 @@ include('../shared/head.php');
 include('../shared/sidebar.php');
 ?>
 
-<h1>Posts Manager</h1>
+<div class="container mt-5">
+	<h1>Posts</h1>
+	<hr>
+</div>
 
 <?php
 include('../shared/scripts.php');

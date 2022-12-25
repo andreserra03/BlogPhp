@@ -19,7 +19,8 @@ if ($row = mysqli_num_rows($res) > 0) {
 ?>
 
 <div class="container mt-5">
-
+	<h1>Users</h1>
+	<hr>
 	<table class="table">
 		<thead>
 			<tr>

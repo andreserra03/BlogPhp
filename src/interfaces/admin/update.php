@@ -8,8 +8,8 @@ if (isset($_POST['btn_update'])) {
 	$username = $_POST['username'];
 	$role = $_POST['user_role'];
 	$id = $_POST['id_user'];
-
-	$sql2 = "UPDATE users SET name_user = '$username', role = '$role' WHERE id_user = '$id';";
+	$status = $_POST['user_status'];
+	$sql2 = "UPDATE users SET name_user = '$username', role = '$role', status = '$status' WHERE id_user = '$id';";
 
 	if ($res2 = mysqli_query($conn, $sql2)) {
 		//array_push($success, "Record was updated successfully.");

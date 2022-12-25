@@ -30,7 +30,7 @@ if ($row = mysqli_num_rows($res) > 0) {
 					<input name="username" type="text" class="form-control" id="exampleFormControlInput1" value="<?php echo $row['name_user'] ?>">
 				</div>
 				<div class="col-4">
-					<label for="exampleFormControlInput2" class="form-label">Role : <?php echo $row['role'] ?></label>
+					<label for="exampleFormControlInput2" class="form-label">Role</label>
 					<div class="input-group mb-3">
 						<select name="user_role" class="form-select" id="exampleFormControlInput2">
 							<option <?php if ($row['role'] == 'Admin') {
@@ -45,17 +45,29 @@ if ($row = mysqli_num_rows($res) > 0) {
 						</select>
 					</div>
 				</div>
+				<div class="col-4">
+					<label for="exampleFormControlInput2" class="form-label">Status</label>
+					<div class="input-group mb-3">
+						<select name="user_status" class="form-select" id="exampleFormControlInput2">
+							<option <?php if ($row['status'] == '0') {
+												echo 'selected="selected"';
+											} ?> value="0">Inactive</option>
+							<option <?php if ($row['status'] == '1') {
+												echo 'selected="selected"';
+											} ?> value="1">Active</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-4">
+					<button name="btn_update" class="btn btn-success">Save</button>
+				</div>
+				<div class="row">
+					<div class="col-4">
+						<?php echo $_SESSION['msg'], $_SESSION['msg'] = '' ?>
+					</div>
+				</div>
 			</div>
-			<div class="col-4">
-				<button name="btn_update" class="btn btn-success">Save</button>
-			</div>
-			<div class="col-4">
-				<?php echo $_SESSION['msg'], $_SESSION['msg'] = '' ?>
-			</div>
-		</div>
 	</form>
-
-
 </div>
 
 <!-- parte de sidebar -->

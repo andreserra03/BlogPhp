@@ -6,8 +6,9 @@ include('head.php');
 include('sidebar.php');
 ?>
 
-<div>
-	<h1>asd</h1>
+<div class="container mt-5">
+	<h1>Home</h1>
+	<hr>
 </div>
 
 
