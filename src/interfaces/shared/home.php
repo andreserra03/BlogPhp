@@ -1,13 +1,17 @@
 <?php
 session_start();
 $title = 'Home';
-include('head.html');
+include('head.php');
+include('sidebar.php');
 ?>
 
 <div>
-	<h1>HOME</h1>
+	<h1>asd</h1>
 </div>
 
+
+<!-- parte de sidebar -->
+</main>
 <?php
-include('scripts.html');
+include('scripts.php');
 ?>

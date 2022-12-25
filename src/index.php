@@ -3,7 +3,7 @@ session_start();
 require_once('data/conn.php');
 
 $title = 'Login';
-include('interfaces/shared/head.html');
+include('interfaces/shared/head.php');
 
 $errors = [];
 $success = [];
@@ -15,10 +15,10 @@ if (isset($_POST['btn_login'])) {
 
 	//verificar se estao preenchidos
 	if (empty($user)) {
-		array_push($errors, "Username precisa de ser preenchido");
+		array_push($errors, "Username not filled");
 	}
 	if (empty($pw)) {
-		array_push($errors, "Password precisa de ser preenchida");
+		array_push($errors, "Password not filled");
 	}
 
 	if (empty($errors)) {
@@ -44,11 +44,11 @@ if (isset($_POST['btn_login'])) {
 				//header("Location: interfaces/shared/home.php");
 				//exit;
 			} else {
-				array_push($errors, "Username ou Palavra-Passe incorreta");
+				array_push($errors, "Username or Password incorrect");
 				//exit;
 			}
 		} else {
-			array_push($errors, "Dados incorretos");
+			array_push($errors, "Incorrect Data");
 		}
 	}
 }
@@ -75,5 +75,5 @@ if (isset($_POST['btn_login'])) {
 </div>
 
 <?php
-include('interfaces/shared/scripts.html');
+include('interfaces/shared/scripts.php');
 ?>
