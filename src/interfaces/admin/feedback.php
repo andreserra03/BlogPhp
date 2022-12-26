@@ -6,8 +6,6 @@ $active_page = 'Feedback';
 include('../shared/head.php');
 include('../shared/sidebar.php');
 
-
-//$sql = "Select feedback.*, users.* from feedback inner join users on feedback.id_user = users.id_user";
 $sql = "Select feedback.*, users.* from feedback inner join users on feedback.id_user = users.id_user;";
 $res = mysqli_query($conn, $sql);
 $feeds = [];
@@ -33,7 +31,6 @@ if ($row = mysqli_num_rows($res) > 0) {
 				</div>
 			</div>
 		<?php endforeach; ?>
-
 	</div>
 
 </div>
