@@ -40,6 +40,11 @@
 						Posts
 					</a>
 				</li>
+				<li>
+					<a href="/interfaces/user/perfil.php?u=<?php echo $_SESSION['user'] ?>" <?php echo $active_page == 'Perfil' ? ' class="active nav-link"' : ''; ?> class="nav-link link-dark">
+						Perfil
+					</a>
+				</li>
 			<?php endif; ?>
 		</ul>
 		<hr>
