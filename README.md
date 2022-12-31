@@ -1,11 +1,35 @@
 ## PHP Project with Docker, Apache and MySQL
 
 ### Docker
-Build Image: docker build -t blog-php .
-Run Image: docker run -d --name my-running-app blog-php
+Docker:
+Install docker -> https://docs.docker.com/engine/install/ubuntu/
 
-Image with Apache: docker run -d -p 80:80 --name my-apache-php-app -v "C:\Users\Andre\Desktop\BlogPhp:/var/www/html" php:7.2-apache
-URL: [localhost](http://localhost:80)
+sudo apt-get update
 
-Run Docker-compose: docker-compose -d
-Stop Docker-compose: docker-compose down
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+
+cd var/www/html
+sudo git clone https://github.com/andreserra03/BlogPhp.git
+sudo chmod 777 /var/www/html -R
+sudo ln -s /var/www/html/BlogPhp ~/Desktop/
+
+
+dentro do projeto: sudo docker compose up -d
+database: localhost:8080 -> user: root / password: example -> import sql file -> src/data/database.sql
+website: localhost
