@@ -5,6 +5,7 @@ USE blog;
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id_user` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
   `name_user` varchar(30) DEFAULT NULL,
   `password` varchar(22) DEFAULT NULL,
   `role` varchar(14) DEFAULT NULL,
@@ -12,11 +13,11 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-INSERT INTO `users` (`id_user`, `name_user`, `password`, `role`, `status`) VALUES
-(1,	'Toze',	'admin',	'Admin',	1),
-(2,	'Manuel',	'manager',	'Manager',	1),
-(3,	'Antonill',	'couves',	'User',	1),
-(4,	'Tonizia',	'bananas',	'User',	1);
+INSERT INTO `users` (`id_user`,  `name`, `name_user`, `password`, `role`, `status`) VALUES
+(1,	'Toze', 'Admin',	'admin',	'Admin',	1),
+(2,	'Manuel', 'Manager',	'manager',	'Manager',	1),
+(3,	'Antonill', 'Anton',	'couves',	'User',	1),
+(4,	'Tonizia', 'Toni',	'bananas',	'User',	1);
 
 
 DROP TABLE IF EXISTS `feedback`;
