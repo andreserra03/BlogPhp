@@ -1,8 +1,8 @@
-## PHP Project with Docker, Apache and MySQL
+# PHP Project with Docker, Apache and MySQL
 
-### Docker
-Docker:
-Install docker -> https://docs.docker.com/engine/install/ubuntu/
+## Docker
+
+### Install docker -> https://docs.docker.com/engine/install/ubuntu/
 
 sudo apt-get update
 
@@ -23,16 +23,14 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-
+### Get project frpm github
 cd var/www/html
 sudo git clone https://github.com/andreserra03/BlogPhp.git
 sudo chmod 777 /var/www/html -R
 sudo ln -s /var/www/html/BlogPhp ~/Desktop/
 
-
+### Iniciar projeto
 dentro do projeto: sudo docker compose up -d
-database: mysql -> user: root / password: devpass -> import sql file -> php/data/database.sql
-website: http://localhost:8100/
-
-ref: https://alysivji.github.io/php-mysql-docker-containers.html
+database: http://localhost:8080 -> user: root / password: example -> import sql file -> src/data/database.sql
+website: http://localhost
 
