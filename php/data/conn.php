@@ -1,8 +1,8 @@
 <?php
 define("USER_BD", "root");
-define("PASS_BD", "example");
+define("PASS_BD", "devpass");
 define("BD", "blog");
-define("HOST", "db");
+define("HOST", "localhost");
 
 //fazer ligacao ao servidor mysql
 if (!($conn = mysqli_connect(HOST, USER_BD, PASS_BD))) {

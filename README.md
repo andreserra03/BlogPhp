@@ -31,5 +31,8 @@ sudo ln -s /var/www/html/BlogPhp ~/Desktop/
 
 
 dentro do projeto: sudo docker compose up -d
-database: localhost:8080 -> user: root / password: example -> import sql file -> src/data/database.sql
-website: localhost
+database: mysql -> user: root / password: devpass -> import sql file -> php/data/database.sql
+website: http://localhost:8100/
+
+ref: https://alysivji.github.io/php-mysql-docker-containers.html
+

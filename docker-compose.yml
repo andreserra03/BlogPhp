@@ -1,30 +1,25 @@
-# Use root/example user/password credentials
-version: '3.1'
+# ./docker-compose.yml
+
+version: '3'
 
 services:
-  php:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 80:80
-    volumes:
-      - ./src:/var/www/html/
-
   db:
-    image: mysql
-    command: --default-authentication-plugin=mysql_native_password
-    restart: always
+    image: mysql:5.7
     environment:
-      MYSQL_ROOT_PASSWORD: example
-    volumes:
-      - mysql-data:/var/lib/mysql
-
-  adminer:
-    image: adminer
-    restart: always
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: blog
+      MYSQL_USER: root
+      MYSQL_PASSWORD: devpass
     ports:
-      - 8080:8080
-
-volumes:
-  mysql-data:
+      - "9906:3306"
+  web:
+    image: php:7.2.2-apache
+    container_name: php_web
+    depends_on:
+      - db
+    volumes:
+      - ./php/:/var/www/html/
+    ports:
+      - "8100:80"
+    stdin_open: true
+    tty: true
