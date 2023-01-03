@@ -45,6 +45,11 @@
 						Perfil
 					</a>
 				</li>
+				<li>
+					<a href="/interfaces/user/feedback.php" <?php echo $active_page == 'Feedback' ? ' class="active nav-link"' : ''; ?> class="nav-link link-dark">
+						Feedback
+					</a>
+				</li>
 			<?php endif; ?>
 		</ul>
 		<hr>

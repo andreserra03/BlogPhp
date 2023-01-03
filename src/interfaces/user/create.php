@@ -15,7 +15,7 @@ if (isset($_POST['btn_create'])) {
 		$_SESSION['msg'] = "Record was updated successfully.";
 	} else {
 		//array_push($errors, "Record was NOT updated successfully. " . $conn->error);
-		$_SESSION['msg'] = "Record was NOT updated successfully. " . $conn->error;
+		$_SESSION['msg'] = "Record was NOT updated successfully.";
 	}
 	echo '<script> window.location.href="posts.php"</script>';
 	mysqli_close($conn);
