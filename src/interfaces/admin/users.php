@@ -5,6 +5,7 @@ $title = 'Edit Users';
 $active_page = 'Users';
 include('../shared/head.php');
 include('../shared/sidebar.php');
+include('../../middleware/session.php');
 
 $sql = "Select * from users";
 $res = mysqli_query($conn, $sql);

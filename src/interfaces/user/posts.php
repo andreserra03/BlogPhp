@@ -3,6 +3,7 @@ session_start();
 include('../../data/conn.php');
 $title = 'Posts';
 $active_page = 'Posts';
+include('../../middleware/session.php');
 include('../shared/head.php');
 include('../shared/sidebar.php');
 ?>

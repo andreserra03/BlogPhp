@@ -5,6 +5,7 @@ $title = 'Edit User';
 $active_page = 'Users';
 include('../shared/head.php');
 include('../shared/sidebar.php');
+include('../../middleware/session.php');
 
 $errors = [];
 $success = [];

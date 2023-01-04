@@ -5,6 +5,7 @@ $title = 'Posts';
 $active_page = 'Posts';
 include('../shared/head.php');
 include('../shared/sidebar.php');
+include('../../middleware/session.php');
 
 $sql = "SELECT posts.*, users.* from posts inner join users on posts.id_user = users.id_user;";
 $res = mysqli_query($conn, $sql);
