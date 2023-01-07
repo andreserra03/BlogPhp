@@ -6,50 +6,28 @@ $title = 'Login';
 include('interfaces/shared/head.php');
 
 $errors = [];
-$success = [];
 
 //Se pressionou no botao de login
 if (isset($_POST['btn_login'])) {
 	$user = $_POST['username'];
 	$pw = $_POST['password'];
 
-	//verificar se estao preenchidos
-	if (empty($user)) {
-		array_push($errors, "Username not filled");
-	}
-	if (empty($pw)) {
-		array_push($errors, "Password not filled");
-	}
-
-	if (empty($errors)) {
 		//query sql
-		$sql = "SELECT * FROM users WHERE name_user = '$user' AND password = '$pw'; ";
+		$sql = "SELECT * FROM users WHERE name_user = '$user' and password = '$pw';";
 		$result = mysqli_query($conn, $sql);
-
-		//erros na query
-		if (!$result) {
-			array_push($errors, "Errors: " . mysqli_error($conn));
-		}
 
 		if ($row = mysqli_num_rows($result) > 0) {
 			$row = mysqli_fetch_assoc($result);
-
-			if ($row['name_user'] === $user && $row['password'] === $pw) {
 				//criar sessoes
 				$_SESSION['id_user'] = $row['id_user'];
 				$_SESSION['user'] = $row['name_user'];
 				$_SESSION['role'] = $row['role'];
 				//ir para a pagina inicial
 				echo '<script> window.location.href="/interfaces/shared/home.php"</script>';
-			} else {
-				array_push($errors, "Username or Password incorrect");
-				//exit;
+			}else {
+			array_push($errors, "Username or Password incorrect");
 			}
-		} else {
-			array_push($errors, "Incorrect Data");
-		}
-	}
-}
+		} 
 ?>
 <!-- Body -->
 <div class="vh-100 d-flex justify-content-center align-items-center">
